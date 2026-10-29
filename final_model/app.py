@@ -1,14 +1,16 @@
 """
-app.py — Iron Ore Reduction Predictor (v3)
+app.py — Iron Ore Reduction Predictor (v3.1 - Cloud Ready)
 Updates:
   1. Added 'ore_type' categorical input.
   2. Dynamically switches between GAS and CARBON models based on reductant.
+  3. Fixed file paths using os.path.abspath(__file__) for Streamlit Cloud deployment.
 """
 import streamlit as st
 import joblib
 import json
 import numpy as np
 import pandas as pd
+import os
 from pathlib import Path
 from scipy.optimize import curve_fit
 
@@ -20,22 +22,31 @@ st.set_page_config(
 )
 
 # ------------------------------------------------------------------ #
-#  Load models & metrics
+#  Load models & metrics (Fixed for Streamlit Cloud)
 # ------------------------------------------------------------------ #
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 @st.cache_resource
 def load_models():
     gas_model = None
     carbon_model = None
-    if Path("model_reduction_degree.pkl").exists():
-        gas_model = joblib.load("model_reduction_degree.pkl")
-    if Path("model_carbon_reduction.pkl").exists():
-        carbon_model = joblib.load("model_carbon_reduction.pkl")
+    
+    gas_path = os.path.join(BASE_DIR, "model_reduction_degree.pkl")
+    carbon_path = os.path.join(BASE_DIR, "model_carbon_reduction.pkl")
+    
+    if os.path.exists(gas_path):
+        gas_model = joblib.load(gas_path)
+    if os.path.exists(carbon_path):
+        carbon_model = joblib.load(carbon_path)
     return gas_model, carbon_model
 
 @st.cache_data
 def load_metrics():
-    p = Path("metrics_reduction_degree.json")
-    return json.loads(p.read_text()) if p.exists() else {}
+    metrics_path = os.path.join(BASE_DIR, "metrics_reduction_degree.json")
+    if os.path.exists(metrics_path):
+        with open(metrics_path, "r") as f:
+            return json.load(f)
+    return {}
 
 GAS_MODEL, CARBON_MODEL = load_models()
 METRICS = load_metrics()
@@ -99,7 +110,6 @@ def predict_morphology(T, h2_frac, co_frac, time_min, reductant):
 
     return ("Porous sponge iron (generic)", "Typical reduction morphology.", "sponge")
 
-# (Schematic drawing function remains exactly the same)
 def draw_morphology_schematic(morph_key):
     import matplotlib
     matplotlib.use("Agg")
@@ -226,7 +236,7 @@ st.title("🔬 Iron Ore Reduction Predictor")
 st.caption("Reduction degree · Metallization · Morphology")
 
 if GAS_MODEL is None:
-    st.error("**Model file `model_reduction_degree.pkl` not found.** Run `python train_final.py` first.")
+    st.error(f"**Model file `model_reduction_degree.pkl` not found.** Looked in: {BASE_DIR}. Ensure you have pushed the .pkl file to GitHub using `git add -f`.")
     st.stop()
 
 tab_ml, tab_avrami, tab_about = st.tabs(["🤖 Prediction", "📈 Calibrated Avrami", "ℹ️ About"])
@@ -251,7 +261,6 @@ with tab_ml:
 
     with col3:
         st.markdown("**Ore properties**")
-        # --- NEW: Ore Type Dropdown ---
         ore_type = st.selectbox("Ore Type", ["Hematite", "Magnetite", "Titanomagnetite", "Not_Reported"], 
                                 index=["Hematite", "Magnetite", "Titanomagnetite", "Not_Reported"].index(preset.get("ore_type", "Hematite")))
         basicity = st.number_input("Basicity (CaO/SiO₂)", 0.0, 3.0, float(preset.get("basicity", 0.3)), 0.05)
@@ -268,7 +277,6 @@ with tab_ml:
         }
         X = build_input_row(inputs)
 
-        # --- NEW: Select the right model ---
         if reductant == "C" and CARBON_MODEL is not None:
             active_model = CARBON_MODEL
             model_name = "Carbon Model"
@@ -278,7 +286,6 @@ with tab_ml:
 
         rd_pred = float(np.clip(active_model.predict(X)[0], 0, 100))
 
-        # Get MAE based on active model
         if reductant == "C" and "CARBON_FAMILY" in METRICS:
             best = METRICS["CARBON_FAMILY"]["best_interpolation_model"]
             interp_mae = float(METRICS["CARBON_FAMILY"]["models"][best]["Ordinary_CV_MAE"])
@@ -325,11 +332,7 @@ with tab_ml:
             )
             st.caption("Morphology is rule-based, derived from literature reduction-regime maps.")
 
-# =================================================================== #
-#  TAB 2 — Calibrated Avrami (unchanged)
-# =================================================================== #
 with tab_avrami:
-    # ... (Keep the exact same code as before) ...
     st.markdown("### Calibrated kinetic prediction")
     st.caption("Enter 3 calibration points from your own experiment. The Avrami model is fitted and used to predict the full curve.")
     cal_cols = st.columns(3)
@@ -373,9 +376,6 @@ with tab_avrami:
             st.dataframe(df_pred, use_container_width=True)
             st.download_button("⬇️ Download as CSV", df_pred.to_csv(index=False), file_name="avrami_prediction.csv")
 
-# =================================================================== #
-#  TAB 3 — About
-# =================================================================== #
 with tab_about:
     st.markdown("### About this model")
     st.markdown(
