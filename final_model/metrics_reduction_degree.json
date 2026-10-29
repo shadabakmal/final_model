@@ -1,0 +1,212 @@
+{
+  "best_interpolation_model": "Gradient Boosting",
+  "best_grouped_model": "Random Forest",
+  "n_rows": 229,
+  "n_papers": 21,
+  "models": {
+    "Linear Regression": {
+      "Ordinary_CV_R2": 0.112,
+      "Ordinary_CV_MAE": 12.9468,
+      "Grouped_CV_R2_mean": -1.9558,
+      "Grouped_CV_R2_std": 1.3082,
+      "Grouped_CV_MAE": 25.2416
+    },
+    "Ridge": {
+      "Ordinary_CV_R2": 0.2922,
+      "Ordinary_CV_MAE": 13.2389,
+      "Grouped_CV_R2_mean": -0.4106,
+      "Grouped_CV_R2_std": 0.7209,
+      "Grouped_CV_MAE": 18.7165
+    },
+    "Lasso": {
+      "Ordinary_CV_R2": 0.2498,
+      "Ordinary_CV_MAE": 13.4318,
+      "Grouped_CV_R2_mean": -0.2857,
+      "Grouped_CV_R2_std": 0.5061,
+      "Grouped_CV_MAE": 18.27
+    },
+    "ElasticNet": {
+      "Ordinary_CV_R2": 0.2288,
+      "Ordinary_CV_MAE": 13.7886,
+      "Grouped_CV_R2_mean": -0.0767,
+      "Grouped_CV_R2_std": 0.2746,
+      "Grouped_CV_MAE": 16.7821
+    },
+    "SVR": {
+      "Ordinary_CV_R2": 0.3989,
+      "Ordinary_CV_MAE": 10.3051,
+      "Grouped_CV_R2_mean": 0.0297,
+      "Grouped_CV_R2_std": 0.1935,
+      "Grouped_CV_MAE": 14.5528
+    },
+    "KNN": {
+      "Ordinary_CV_R2": 0.4138,
+      "Ordinary_CV_MAE": 11.0821,
+      "Grouped_CV_R2_mean": -0.1009,
+      "Grouped_CV_R2_std": 0.2673,
+      "Grouped_CV_MAE": 16.8655
+    },
+    "Decision Tree": {
+      "Ordinary_CV_R2": 0.5032,
+      "Ordinary_CV_MAE": 10.045,
+      "Grouped_CV_R2_mean": 0.0185,
+      "Grouped_CV_R2_std": 0.3199,
+      "Grouped_CV_MAE": 14.2796
+    },
+    "Random Forest": {
+      "Ordinary_CV_R2": 0.4074,
+      "Ordinary_CV_MAE": 11.8875,
+      "Grouped_CV_R2_mean": 0.156,
+      "Grouped_CV_R2_std": 0.1407,
+      "Grouped_CV_MAE": 15.112
+    },
+    "Extra Trees": {
+      "Ordinary_CV_R2": 0.3207,
+      "Ordinary_CV_MAE": 12.8336,
+      "Grouped_CV_R2_mean": 0.1112,
+      "Grouped_CV_R2_std": 0.1435,
+      "Grouped_CV_MAE": 15.3192
+    },
+    "AdaBoost": {
+      "Ordinary_CV_R2": 0.5817,
+      "Ordinary_CV_MAE": 10.9831,
+      "Grouped_CV_R2_mean": 0.0549,
+      "Grouped_CV_R2_std": 0.329,
+      "Grouped_CV_MAE": 15.8532
+    },
+    "Gradient Boosting": {
+      "Ordinary_CV_R2": 0.8087,
+      "Ordinary_CV_MAE": 6.0554,
+      "Grouped_CV_R2_mean": 0.0094,
+      "Grouped_CV_R2_std": 0.5198,
+      "Grouped_CV_MAE": 14.9285
+    },
+    "Hist Gradient Boosting": {
+      "Ordinary_CV_R2": 0.8056,
+      "Ordinary_CV_MAE": 5.6321,
+      "Grouped_CV_R2_mean": 0.0402,
+      "Grouped_CV_R2_std": 0.4129,
+      "Grouped_CV_MAE": 14.5603
+    },
+    "XGBoost": {
+      "Ordinary_CV_R2": 0.7626,
+      "Ordinary_CV_MAE": 6.8881,
+      "Grouped_CV_R2_mean": 0.0609,
+      "Grouped_CV_R2_std": 0.4352,
+      "Grouped_CV_MAE": 14.9223
+    },
+    "LightGBM": {
+      "Ordinary_CV_R2": 0.7868,
+      "Ordinary_CV_MAE": 6.2742,
+      "Grouped_CV_R2_mean": 0.0638,
+      "Grouped_CV_R2_std": 0.4195,
+      "Grouped_CV_MAE": 14.7404
+    }
+  },
+  "CARBON_FAMILY": {
+    "best_interpolation_model": "Gradient Boosting",
+    "best_grouped_model": "Ridge",
+    "n_rows": 325,
+    "n_papers": 4,
+    "models": {
+      "Linear Regression": {
+        "Ordinary_CV_R2": 0.8803,
+        "Ordinary_CV_MAE": 6.5688,
+        "Grouped_CV_R2_mean": -1.732,
+        "Grouped_CV_R2_std": 1.4628,
+        "Grouped_CV_MAE": 20.7741
+      },
+      "Ridge": {
+        "Ordinary_CV_R2": 0.8344,
+        "Ordinary_CV_MAE": 9.1212,
+        "Grouped_CV_R2_mean": -0.1084,
+        "Grouped_CV_R2_std": 0.6267,
+        "Grouped_CV_MAE": 14.3182
+      },
+      "Lasso": {
+        "Ordinary_CV_R2": 0.8367,
+        "Ordinary_CV_MAE": 9.0591,
+        "Grouped_CV_R2_mean": -0.109,
+        "Grouped_CV_R2_std": 0.5315,
+        "Grouped_CV_MAE": 14.0842
+      },
+      "ElasticNet": {
+        "Ordinary_CV_R2": 0.8196,
+        "Ordinary_CV_MAE": 9.6288,
+        "Grouped_CV_R2_mean": -0.1961,
+        "Grouped_CV_R2_std": 0.606,
+        "Grouped_CV_MAE": 15.0132
+      },
+      "SVR": {
+        "Ordinary_CV_R2": 0.9214,
+        "Ordinary_CV_MAE": 5.6173,
+        "Grouped_CV_R2_mean": -0.9136,
+        "Grouped_CV_R2_std": 0.9918,
+        "Grouped_CV_MAE": 20.4347
+      },
+      "KNN": {
+        "Ordinary_CV_R2": 0.921,
+        "Ordinary_CV_MAE": 5.2339,
+        "Grouped_CV_R2_mean": -0.7455,
+        "Grouped_CV_R2_std": 1.334,
+        "Grouped_CV_MAE": 18.1013
+      },
+      "Decision Tree": {
+        "Ordinary_CV_R2": 0.9225,
+        "Ordinary_CV_MAE": 5.1931,
+        "Grouped_CV_R2_mean": -0.6866,
+        "Grouped_CV_R2_std": 0.2761,
+        "Grouped_CV_MAE": 16.317
+      },
+      "Random Forest": {
+        "Ordinary_CV_R2": 0.9211,
+        "Ordinary_CV_MAE": 6.0593,
+        "Grouped_CV_R2_mean": -0.7652,
+        "Grouped_CV_R2_std": 0.8729,
+        "Grouped_CV_MAE": 20.7549
+      },
+      "Extra Trees": {
+        "Ordinary_CV_R2": 0.8179,
+        "Ordinary_CV_MAE": 9.887,
+        "Grouped_CV_R2_mean": -1.1847,
+        "Grouped_CV_R2_std": 0.8261,
+        "Grouped_CV_MAE": 22.2112
+      },
+      "AdaBoost": {
+        "Ordinary_CV_R2": 0.938,
+        "Ordinary_CV_MAE": 5.4127,
+        "Grouped_CV_R2_mean": -0.3158,
+        "Grouped_CV_R2_std": 0.0622,
+        "Grouped_CV_MAE": 14.2486
+      },
+      "Gradient Boosting": {
+        "Ordinary_CV_R2": 0.9698,
+        "Ordinary_CV_MAE": 2.7666,
+        "Grouped_CV_R2_mean": -0.2955,
+        "Grouped_CV_R2_std": 0.6956,
+        "Grouped_CV_MAE": 14.4692
+      },
+      "Hist Gradient Boosting": {
+        "Ordinary_CV_R2": 0.9695,
+        "Ordinary_CV_MAE": 2.8005,
+        "Grouped_CV_R2_mean": -0.7214,
+        "Grouped_CV_R2_std": 1.3618,
+        "Grouped_CV_MAE": 17.8257
+      },
+      "XGBoost": {
+        "Ordinary_CV_R2": 0.9694,
+        "Ordinary_CV_MAE": 2.9686,
+        "Grouped_CV_R2_mean": -0.1696,
+        "Grouped_CV_R2_std": 0.5062,
+        "Grouped_CV_MAE": 15.3677
+      },
+      "LightGBM": {
+        "Ordinary_CV_R2": 0.9633,
+        "Ordinary_CV_MAE": 2.9162,
+        "Grouped_CV_R2_mean": -0.4076,
+        "Grouped_CV_R2_std": 0.2617,
+        "Grouped_CV_MAE": 17.5103
+      }
+    }
+  }
+}

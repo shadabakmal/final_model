@@ -1,0 +1,152 @@
+{
+  "_meta": {
+    "dataset_rows": 512,
+    "papers": 15,
+    "families": {
+      "C": 3,
+      "GAS": 12
+    },
+    "selection": "repeated grouped CV (held-out-paper), 20 repeats"
+  },
+  "C": {
+    "best_model": "Ridge",
+    "features": [
+      "heating_mode",
+      "bed_type",
+      "temperature_c",
+      "time_min",
+      "basicity",
+      "gangue_pct",
+      "cpr",
+      "particle_size_mm",
+      "inv_T",
+      "log_time",
+      "sqrt_time",
+      "arrhenius",
+      "time_over_T"
+    ],
+    "results": {
+      "Ridge": {
+        "grouped_R2": 0.0886,
+        "grouped_R2_std": 0.1043,
+        "grouped_MAE": 13.8998
+      },
+      "ElasticNet": {
+        "grouped_R2": -0.0655,
+        "grouped_R2_std": 0.1564,
+        "grouped_MAE": 15.4567
+      },
+      "SVR": {
+        "grouped_R2": -1.3553,
+        "grouped_R2_std": 1.1281,
+        "grouped_MAE": 23.7774
+      },
+      "KNN": {
+        "grouped_R2": -1.2454,
+        "grouped_R2_std": 1.1898,
+        "grouped_MAE": 22.3876
+      },
+      "Random Forest": {
+        "grouped_R2": -1.0114,
+        "grouped_R2_std": 1.1075,
+        "grouped_MAE": 22.5954
+      },
+      "Extra Trees": {
+        "grouped_R2": -0.7058,
+        "grouped_R2_std": 0.8199,
+        "grouped_MAE": 20.9208
+      },
+      "AdaBoost": {
+        "grouped_R2": -0.7932,
+        "grouped_R2_std": 0.8029,
+        "grouped_MAE": 20.956
+      },
+      "Gradient Boosting": {
+        "grouped_R2": -0.7076,
+        "grouped_R2_std": 0.9893,
+        "grouped_MAE": 20.007
+      },
+      "Hist GB": {
+        "grouped_R2": -0.4611,
+        "grouped_R2_std": 0.1069,
+        "grouped_MAE": 18.2333
+      }
+    },
+    "n_rows": 323,
+    "n_papers": 3
+  },
+  "GAS": {
+    "best_model": "Extra Trees",
+    "features": [
+      "heating_mode",
+      "bed_type",
+      "temperature_c",
+      "time_min",
+      "basicity",
+      "gangue_pct",
+      "porosity_pct",
+      "cpr",
+      "h2_frac",
+      "co_frac",
+      "ch4_frac",
+      "inv_T",
+      "log_time",
+      "sqrt_time",
+      "arrhenius",
+      "time_over_T",
+      "total_reductant",
+      "h2_to_co_ratio",
+      "redox_potential",
+      "T_x_reductant"
+    ],
+    "results": {
+      "Ridge": {
+        "grouped_R2": -3.0643,
+        "grouped_R2_std": 3.4374,
+        "grouped_MAE": 26.3969
+      },
+      "ElasticNet": {
+        "grouped_R2": -2.8052,
+        "grouped_R2_std": 3.438,
+        "grouped_MAE": 25.6113
+      },
+      "SVR": {
+        "grouped_R2": -0.5456,
+        "grouped_R2_std": 0.5364,
+        "grouped_MAE": 18.0106
+      },
+      "KNN": {
+        "grouped_R2": -0.3799,
+        "grouped_R2_std": 0.32,
+        "grouped_MAE": 17.185
+      },
+      "Random Forest": {
+        "grouped_R2": -0.1799,
+        "grouped_R2_std": 0.3421,
+        "grouped_MAE": 15.7437
+      },
+      "Extra Trees": {
+        "grouped_R2": -0.1772,
+        "grouped_R2_std": 0.4374,
+        "grouped_MAE": 15.9304
+      },
+      "AdaBoost": {
+        "grouped_R2": -0.3715,
+        "grouped_R2_std": 0.3989,
+        "grouped_MAE": 17.3607
+      },
+      "Gradient Boosting": {
+        "grouped_R2": -0.944,
+        "grouped_R2_std": 1.0087,
+        "grouped_MAE": 18.2643
+      },
+      "Hist GB": {
+        "grouped_R2": -0.5016,
+        "grouped_R2_std": 0.6186,
+        "grouped_MAE": 16.2519
+      }
+    },
+    "n_rows": 189,
+    "n_papers": 12
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "stage1_groups": 32,
+  "stage1_papers": 7,
+  "stage1_median_R2": 0.9974881833320574,
+  "best_model_for_k": "RandomForest",
+  "grouped_R2_log_k": -1.876,
+  "best_model_for_n": "RandomForest",
+  "grouped_R2_n": -2.3164,
+  "features": [
+    "inv_T",
+    "total_red",
+    "h2_share",
+    "basicity",
+    "gangue_pct",
+    "porosity_pct"
+  ]
+}

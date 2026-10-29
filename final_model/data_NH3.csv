@@ -1,0 +1,10 @@
+meta_source,reductant,heating_mode,bed_type,temperature_c,time_min,porosity_pct,metallization_pct,feed_form
+NH3paper,NH3,Resistance,Static,849.9,120.0,,91.85,Fines
+NH3paper,NH3,Resistance,Static,849.9,120.0,23.0,90.89,Indurated pellets
+NH3paper,NH3,Resistance,Static,849.9,120.0,28.0,49.54,Green pellets
+NH3paper,NH3,Resistance,Static,849.9,150.0,,79.1,Green pellets
+NH3paper,NH3,Resistance,Static,849.9,150.0,,91.32,Fines
+NH3paper,NH3,Resistance,Static,849.9,150.0,,90.31,Indurated pellets
+NH3paper,NH3,Resistance,Static,949.9,90.0,,84.43,Indurated pellets
+NH3paper,NH3,Resistance,Static,949.9,90.0,,77.94,Green pellets
+NH3paper,NH3,Resistance,Static,949.9,90.0,,88.22,Fines
